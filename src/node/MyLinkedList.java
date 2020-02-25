@@ -1,11 +1,17 @@
 package node;
 
+import field.Person;
+
 public class MyLinkedList<E> {
     private Node<E> head = null;
     private int size = 0;
 
     public void setSize(int size) {
         this.size = size;
+    }
+
+    public int getSize() {
+        return size;
     }
 
     public Node getNode(int index) {
@@ -70,6 +76,39 @@ public class MyLinkedList<E> {
             System.out.print(temp.getData() + (i < size - 1 ? "," : ""));
         }
         System.out.println("]");
+    }
+
+
+    @Override
+    public MyLinkedList<E> sort(MyLinkedList<E> person) {
+        for (int i = 0; i < person.getSize(); i++) {
+            for (int j = 1; j < person.getSize(); j++) {
+                Node person1 = person.getNode(j - 1);
+                Node person2 = person.getNode(j);
+                Person first = (Person) person1.getData();
+                Person second = (Person) person2.getData();
+                if (first.getFirstName().compareTo(second.getFirstName()) >= 1) {
+                    person.swap(person1, person2, j - 2);
+                }
+            }
+        }
+        return person;
+    }
+
+    private void swap(Node<E> first, Node<E> second, int previous) {
+        if (first == head) {
+            Node temp = second.getNext();
+            head = second;
+            second.setNext(first);
+            first.setNext(temp);
+        } else {
+            Node temp = second.getNext();
+            Node pre = getNode(previous);
+            pre.setNext(second);
+            second.setNext(first);
+            first.setNext(temp);
+        }
+
     }
 
 

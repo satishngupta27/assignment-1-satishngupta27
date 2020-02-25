@@ -15,4 +15,22 @@ public class MyLinkedList<E> {
         }
         return response;
     }
+
+    public void addFirst(E data) {
+        head = new Node(head, data);
+        size++;
+    }
+
+    private void add(E data, int index) {
+        Node temp = getNode(index - 1);
+        if (head == null) {
+            addFirst(data);
+        } else {
+            Node newNode = temp.getNext();
+            temp.setNext(new Node(newNode, data));
+        }
+        size++;
+    }
+
+
 }

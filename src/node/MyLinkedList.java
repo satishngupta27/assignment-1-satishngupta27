@@ -7,4 +7,12 @@ public class MyLinkedList<E> {
     public void setSize(int size) {
         this.size = size;
     }
+
+    public Node getNode(int index) {
+        Node response = head;
+        for (int i = 0; i < index; i++) {
+            response = response.getNext();
+        }
+        return response;
+    }
 }

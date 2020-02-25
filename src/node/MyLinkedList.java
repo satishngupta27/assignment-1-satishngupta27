@@ -57,5 +57,20 @@ public class MyLinkedList<E> {
         size--;
     }
 
+    @Override
+    public void delete() {
+        delete(size - 1);
+    }
+
+    @Override
+    public void traverse() {
+        Node temp = head;
+        System.out.print("[");
+        for (int i = 0; i < size; i++) {
+            System.out.print(temp.getData() + (i < size - 1 ? "," : ""));
+        }
+        System.out.println("]");
+    }
+
 
 }

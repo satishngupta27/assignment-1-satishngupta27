@@ -43,7 +43,7 @@ public class MyLinkedList<E> {
         add(data, index);
     }
 
-    @Override
+
     public void insert(E data) {
         if (head == null) {
             addFirst(data);
@@ -63,12 +63,12 @@ public class MyLinkedList<E> {
         size--;
     }
 
-    @Override
+
     public void delete() {
         delete(size - 1);
     }
 
-    @Override
+
     public void traverse() {
         Node temp = head;
         System.out.print("[");
@@ -79,7 +79,6 @@ public class MyLinkedList<E> {
     }
 
 
-    @Override
     public MyLinkedList<E> sort(MyLinkedList<E> person) {
         for (int i = 0; i < person.getSize(); i++) {
             for (int j = 1; j < person.getSize(); j++) {

@@ -6,9 +6,9 @@ public class Person {
     private String firstName;
     private String lastName;
     private String emailAddress;
-    private MyLinkedList<String> contactNumber;
+    private MyLinkedList<Long> contactNumber;
 
-    public Person(String firstName, String lastName, String emailAddress, MyLinkedList<String> contactNumber) {
+    public Person(String firstName, String lastName, String emailAddress, MyLinkedList<Long> contactNumber) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.emailAddress = emailAddress;
@@ -39,11 +39,11 @@ public class Person {
         this.emailAddress = emailAddress;
     }
 
-    public MyLinkedList<String> getContactNumber() {
+    public MyLinkedList<Long> getContactNumber() {
         return contactNumber;
     }
 
-    public void setContactNumber(MyLinkedList<String> contactNumber) {
+    public void setContactNumber(MyLinkedList<Long> contactNumber) {
         this.contactNumber = contactNumber;
     }
 }

@@ -46,5 +46,16 @@ public class MyLinkedList<E> {
         }
     }
 
+    public void delete(int index) {
+        if (index == 0) {
+            head = head.getNext();
+        } else {
+            Node temp = getNode(index - 1);
+            Node nextNode = getNode(index);
+            temp.setNext(nextNode.getNext());
+        }
+        size--;
+    }
+
 
 }

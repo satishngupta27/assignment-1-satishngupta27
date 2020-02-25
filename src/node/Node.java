@@ -1,4 +1,6 @@
 package node;
 
-public class Node {
+public class Node<E> {
+    private Node<E> next;
+    private E data;
 }
